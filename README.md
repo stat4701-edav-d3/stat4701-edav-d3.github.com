@@ -24,6 +24,7 @@
 # Stephen and Danny's D3 Mapping Presentation
 ![googlemap](img/googlemap.jpg)   
 # from Shapefile to TopoJSON (and some GeoJSON) using GDAL/OGR
+
 ---
 
 # Agenda

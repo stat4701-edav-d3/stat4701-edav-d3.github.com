@@ -4,7 +4,18 @@ title: Resources
 permalink: /resources/
 ---
 
+
+##Data
+
+---
+
+
+###[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
+
+###[Google Flu Trends](https://www.google.org/flutrends/us/#US)
+
 ##OSGeo
+
 ---
 
 
@@ -12,6 +23,7 @@ permalink: /resources/
 * [GDAL - Geospatial Data Abstraction Library](http://www.gdal.org/)
 
 ##D3
+
 ---
 
 ###TNoda Resources
