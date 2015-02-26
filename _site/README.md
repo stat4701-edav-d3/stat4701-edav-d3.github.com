@@ -22,6 +22,7 @@
 
 
 X. Maybe a demo that people can follow to do a very basic d3 map (maybe not, seems like this browser issues and others could be a huge pain)
+X. Maybe do something with CartoDB at the end. If no one else is talking about it, it could be useful to at least mention and show a few things.
 
 ---
 

@@ -1,4 +1,15 @@
-# stat4701-edav-d3.github.com
+#stat4701-edav-d3.github.com
+
+#To Do:
+
+* Grab city's from Table - create a list of city's
+* geocode that list
+* create shapefile of that list
+* create geojson of cities list with coords and Flu Data
+
+
+
+
 
 
 #Outline for Remark Presenation
@@ -22,6 +33,7 @@
 
 
 X. Maybe a demo that people can follow to do a very basic d3 map (maybe not, seems like this browser issues and others could be a huge pain)
+X. Maybe do something with CartoDB at the end. If no one else is talking about it, it could be useful to at least mention and show a few things.
 
 ---
 
