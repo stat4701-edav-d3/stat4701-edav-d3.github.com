@@ -10,9 +10,9 @@ permalink: /resources/
 ---
 
 
-###[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
+* ###[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
 
-###[Google Flu Trends](https://www.google.org/flutrends/us/#US)
+* ###[Google Flu Trends](https://www.google.org/flutrends/us/#US)
 
 ##OSGeo
 
