@@ -1,8 +1,8 @@
 # Site settings
-title: D3 Mapping
+title: 
 email: 
 description: > # this means to ignore newlines until "baseurl:"
-  stat4701-edav-d3
+  
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://stat4701-edav-d3.github.io/" # the base hostname & protocol for your site
 twitter_username: 
