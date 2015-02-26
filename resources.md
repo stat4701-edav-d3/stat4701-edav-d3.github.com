@@ -4,12 +4,15 @@ title: Resources
 permalink: /resources/
 ---
 
+##OSGeo
+---
 
 
 ###GDAL/OGR
 * [GDAL - Geospatial Data Abstraction Library](http://www.gdal.org/)
 
 ##D3
+---
 
 ###TNoda Resources
 * [Interactive Map with d3.js](http://www.tnoda.com/blog/2013-12-07)
