@@ -53,6 +53,7 @@ X. Maybe do something with CartoDB at the end. If no one else is talking about i
 ##[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
 
 ##[Google Flu Trends](https://www.google.org/flutrends/us/#US)
+![GoogleFluTrends](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/google_flu_trends.png)
 
 
 ###Cities Lat/Longs
@@ -67,5 +68,5 @@ X. Maybe do something with CartoDB at the end. If no one else is talking about i
 
     some code
 
-![googlemap](img/googlemap.jpg)  
+![googlemap](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)  
 
