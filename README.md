@@ -46,7 +46,15 @@ X. Maybe do something with CartoDB at the end. If no one else is talking about i
 
 ---
 
-# What's not 
+# Data
+
+##[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
+
+##[Google Flu Trends](https://www.google.org/flutrends/us/#US)
+
+---
+
+# What's not cool about D3
 
     some code
 
