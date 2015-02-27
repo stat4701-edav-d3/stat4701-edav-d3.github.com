@@ -57,7 +57,7 @@ X. Maybe do something with CartoDB at the end. If no one else is talking about i
 
 ##[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
 
-###Scraping CDC Flu Data in R
+###Scraping and Munging CDC Flu Data in R
 
     library(cdcfluview)
     library(dplyr)
