@@ -13,7 +13,7 @@
 * create geojson of cities list with coords and Flu Data
 	* maybe all good on this, see cities ... html 
 
-
+http://bost.ocks.org/mike/bubble-map/base.html
 
 
 
