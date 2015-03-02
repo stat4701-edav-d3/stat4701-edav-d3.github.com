@@ -10,9 +10,9 @@
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script>
 
-d3.json("https://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/data/census/states/states.json", function(error, uk) {
+d3.json("states_mapshaper.json", function(error, states) {
   if (error) return console.error(error);
-  console.log(uk);
+  console.log(states);
 });
 
 </script>
