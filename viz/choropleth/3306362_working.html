@@ -30,7 +30,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 queue()
-    .defer(d3.json, "http://bl.ocks.org/mbostock/raw/4090846/us.json")
+    .defer(d3.json, "us.json")
     .defer(d3.tsv, "unemployment.tsv")
     .await(ready);
 
