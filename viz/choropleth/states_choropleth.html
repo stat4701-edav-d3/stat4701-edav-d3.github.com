@@ -10,12 +10,9 @@
 
 </style>
 <body>
-
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-
-<h1>Rate of Flu Counts (Google Trends) per 10,000 people by State</h1>
 
 <script>
 
@@ -23,7 +20,7 @@ var width = 960,
     height = 500;
 
 var color = d3.scale.threshold()
-    .domain([.0001, .01, 10, 25, 50])
+    .domain([.02, .04, .06, .08, .5])
     .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
 
 var path = d3.geo.path();
@@ -33,8 +30,9 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 queue()
-    .defer(d3.json, "us.json")
-    .defer(d3.tsv, "data/rate-2014-12-14.tsv")
+    // .defer(d3.json, "http://bl.ocks.org/mbostock/raw/4090846/us.json")
+    .defer(d3.json, "https://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/data/census/states/states.json")
+    .defer(d3.tsv, "https://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/viz/choropleth/_original/unemployment.tsv")
     .await(ready);
 
 function ready(error, us, unemployment) {
