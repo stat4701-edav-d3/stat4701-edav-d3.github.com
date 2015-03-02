@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Changing Pages... Please Wait</title>
+<script type="text/javascript">
+var frames = Array('https://www.google.com/', 1,
+    'http://www.yahoo.com/', 3,
+    'http://www.ask.com/', 5,
+    'http://www.dogpile.com/', 5);
+var i = 0, len = frames.length;
+function ChangeSrc()
+{
+  if (i >= len) { i = 0; } // start over
+  document.getElementById('frame').src = frames[i++];
+  setTimeout('ChangeSrc()', (frames[i++]*1000));
+}
+window.onload = ChangeSrc;
+</script>
+</head>
+<body>
+<iframe src="" name="frame" id="frame" width="100%" height="100%"></iframe>
+</body>
+</html>
