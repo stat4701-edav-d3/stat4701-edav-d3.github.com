@@ -33,7 +33,7 @@ var svg = d3.select("body").append("svg")
 
 queue()
     .defer(d3.json, "us.json")
-    .defer(d3.tsv, "unemployment.tsv")
+    .defer(d3.tsv, "data/rate-2014-12-14.tsv")
     .await(ready);
 
 function ready(error, us, unemployment) {
