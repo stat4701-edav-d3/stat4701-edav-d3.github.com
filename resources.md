@@ -29,6 +29,8 @@ permalink: /resources/
 ###Mike Bostock
 * [Let's Make a Map](http://bost.ocks.org/mike/map/)
 
+###D3.GeoMap
+* [Choropleth Map: US States](http://d3-geomap.github.io/map/choropleth/us-states/)
 
 ###TNoda Resources
 * [Interactive Map with d3.js](http://www.tnoda.com/blog/2013-12-07)

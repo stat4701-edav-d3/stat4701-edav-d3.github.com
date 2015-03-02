@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<style>
+
+/* CSS goes here. */
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+<script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
+<script src="/d3-geomap/js/d3.geomap.min.js"></script>
+<script>
+var map = d3.geomap.choropleth()
+    .geofile('/d3-geomap/topojson/countries/USA.json')
+    .projection(d3.geo.albersUsa)
+    .column('2012')
+    .unitId('fips')
+    .scale(1000)
+    .legend(true);
+
+d3.csv('/data/venture-capital.csv', function(error, data) {
+    d3.select('#map')
+        .datum(data)
+        .call(map.draw, map);
+});
+
+</script>
+
+
+
+
+
+<!-- <div id="map"></div> -->
+
+
