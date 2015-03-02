@@ -20,7 +20,7 @@ var width = 960,
     height = 500;
 
 var color = d3.scale.threshold()
-    .domain([.02, .04, .06, .08, .5])
+    .domain([.0001, .01, 10, 25, 50])
     .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
 
 var path = d3.geo.path();
@@ -31,7 +31,7 @@ var svg = d3.select("body").append("svg")
 
 queue()
     .defer(d3.json, "http://bl.ocks.org/mbostock/raw/4090846/us.json")
-    .defer(d3.tsv, "https://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/viz/choropleth/_original/unemployment.tsv")
+    .defer(d3.tsv, "unemployment.tsv")
     .await(ready);
 
 function ready(error, us, unemployment) {
