@@ -268,10 +268,10 @@ function createLegend(){
   var legend = g.append("g").attr("id","legend").attr("transform","translate(560,10)");
 
   legend.append("circle").attr("class","gain").attr("r",5).attr("cx",5).attr("cy",10)
-  legend.append("circle").attr("class","loss").attr("r",5).attr("cx",5).attr("cy",30)
+  // legend.append("circle").attr("class","loss").attr("r",5).attr("cx",5).attr("cy",30)
 
-  legend.append("text").text("jobs gained").attr("x",15).attr("y",13);
-  legend.append("text").text("jobs lost").attr("x",15).attr("y",33);
+  legend.append("text").text("City Flu Trend").attr("x",15).attr("y",13);
+  // legend.append("text").text("jobs lost").attr("x",15).attr("y",33);
 
   var sizes = [ 10000, 100000, 250000 ];
   for ( var i in sizes ){
@@ -281,7 +281,7 @@ function createLegend(){
       .attr( "cy", 2 * circleSize( sizes[sizes.length-1] ) - circleSize( sizes[i] ) )
       .attr("vector-effect","non-scaling-stroke");
     legend.append("text")
-      .text( (sizes[i] / 1000) + "K" + (i == sizes.length-1 ? " jobs" : "") )
+      .text( (sizes[i] / 1000) + "K" + (i == sizes.length-1 ? " Flu" : "") )
       .attr( "text-anchor", "middle" )
       .attr( "x", 80 + circleSize( sizes[sizes.length-1] ) )
       .attr( "y", 2 * ( circleSize( sizes[sizes.length-1] ) - circleSize( sizes[i] ) ) + 5 )
