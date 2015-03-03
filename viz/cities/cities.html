@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="lib/d3.slider.css" />
+  <title>Geography of Jobs</title>
+</head>
+<body>
+  <div id="container">
+    <h1>Geography of Jobs</h1>
+    <h2>Net Job Gains / Losses by Metropolitan Statistical Area</h2>
+    <p id="intro">The Geography of Jobs map is a dynamic visualization of job gains and losses over the last 15+ years for every metro area in the U.S. The red and blue bubbles represent a rolling 12-month net change in total employment for each metro area. Simply press Play and watch the animation unfold.</p>
+    <div id="date">
+      <p>12 months ending on:</p>
+      <p id="month"></p>
+    </div>
+    <div id="play"></div>
+    <div id="slider-container">
+      <div id="slider-div"></div>
+      <div id="slider-probe">
+        <p></p>
+        <div></div>
+      </div>
+    </div>
+    <div id="map-container"></div>
+    <a href="http://axismaps.com" target="_blank" id="axis-maps"><img src="images/axismaps.png" alt="Axis Maps" title="Designed and built by Axis Maps"/></a>
+    <p id="source">Source: US Bureau of Labor Statistics, Current Employment Statistics and TIP Strategies</p>
+  </div>
+  <script src="lib/d3.v3.min.js"></script>
+  <script src="lib/topojson.v1.min.js"></script>
+  <script src="lib/d3.slider.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
