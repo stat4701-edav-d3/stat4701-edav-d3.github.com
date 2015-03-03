@@ -294,7 +294,7 @@ function setProbeContent(d){
       m_y = getMonthYear( orderedColumns[ currentFrame ] ),
       month = months_full[ months.indexOf(m_y[0]) ];
   var html = "<strong>" + d.CITY + "</strong><br/>" +
-            format( Math.abs( val ) ) + " jobs " + ( val < 0 ? "lost" : "gained" ) + "<br/>" +
+            format( Math.abs( val ) ) + "  " + ( val < 0 ? "lost" : "gained" ) + "<br/>" +
             "<span>" + month + " " + m_y[1] + "</span>";
   probe
     .html( html );
