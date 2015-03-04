@@ -22,6 +22,7 @@
 class: center, middle
 
 
+
 # Stephen and Danny's D3 Mapping Presentation:
 ![googlemap](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)   
 # A Crash Course from Shapefile to TopoJSON (and some GeoJSON) using GDAL/OGR
@@ -32,10 +33,10 @@ class: center, middle
 
 1. Introduction
 2. Getting a Shapefile
-3. Conversion 
-4. TopoJSON vs. GeoJSON
-5. Flu Data
-6. D3 Examples and Inspiration
+3. Conversion
+4. Plotting the JSON in D3
+5. TopoJSON vs. GeoJSON
+6. Example: Flu Data
 
 
 X. Maybe a demo that people can follow to do a very basic d3 map (maybe not, seems like this browser issues and others could be a huge pain)
@@ -71,21 +72,32 @@ zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/
 
 Using [GDAL/OGR](http://www.gdal.org/) convert the Shapefile to JSON. 
 
-    ogr2ogr -f GeoJSON /Users/danielmsheehan/GitHub/d3-presentation/data/census/states/states.json /Users/danielmsheeha        n/GitHub/d3-presentation/data/census/states/cb_2013_us_state_20m.shp
+    ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
 
 Then, after installing node.js, we can create TopoJson
     
-    topojson /Users/danielmsheehan/GitHub/d3-presentation/data/census/states/states.topo.json /Users/danielmsheehan/GitHub/d3-presentation/data/census/states/states.json
+    topojson states.topo.json states.json
 
 More simply:
     topojson states_cln.topo.json states.json
     
 [So here's this TopoJSON file in a simple plot](http://stat4701-edav-d3.github.io/viz/plot_json.html)  
 
+# 4. Plotting the JSON in D3
+[The Map](http://stat4701-edav-d3.github.io/viz/plot_json_1.html)
+[Here’s the HTML code - randomly projected](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_1.html)
+
+###Reconfiguring the Map Extents
+
+[The Map with new Extents](http://stat4701-edav-d3.github.io/viz/plot_json_2.html)
+[Here’s the HTML code - Project ](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_2.html)
+
+
+
 
 ---
 
-# 4. TopoJSON vs. GeoJSON
+# 5. TopoJSON vs. GeoJSON
 
 ![Size compression for country data](http://commondatastorage.googleapis.com/imgserv%2Ffilesize.png)
 
@@ -104,22 +116,9 @@ More simply:
 ![cities](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/seeing-latlngs-in-source-from-google-trends.png)
 ![citiesxcode](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/seeing-latlngs-in-xcode.png)
 
-
-
----
-
-# What's not cool about D3
-
-    some code
-
-![googlemap](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)  
-
-
----
-
-
-
 [GDAL/OGR](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb#GDAL/OGR)
+
+---
 
 
     </textarea>
