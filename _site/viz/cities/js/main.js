@@ -226,10 +226,10 @@ function createSlider(){
     .append("div")
     .attr("id","slider-div")
     .style("width",dateScale.range()[1] + "px")
-    .on("mousemove",sliderProbe)
-    .on("mouseout",function(){
-      d3.select("#slider-probe").style("display","none");
-    })
+    // .on("mousemove",sliderProbe)
+    // .on("mouseout",function(){
+    //   d3.select("#slider-probe").style("display","none");
+    // })
     .call( slider );
 
   d3.select("#slider-div a").on("mousemove",function(){
@@ -237,17 +237,17 @@ function createSlider(){
   })
 
   var sliderAxis = d3.svg.axis()
-    .scale( dateScale )
-    .tickValues( dateScale.ticks(orderedColumns.length).filter(function(d,i){
-      // ticks only for beginning of each year, plus first and last
-      return d.getMonth() == 0 || i == 0 || i == orderedColumns.length-1;
-    }))
-    .tickFormat(function(d){
-      // abbreviated year for most, full month/year for the ends
-      if ( d.getMonth() == 0 ) return "'" + d.getFullYear().toString().substr(2);
-      return months[d.getMonth()] + " " + d.getFullYear();
-    })
-    .tickSize(10)
+    // .scale( dateScale )
+    // .tickValues( dateScale.ticks(orderedColumns.length).filter(function(d,i){
+    //   // ticks only for beginning of each year, plus first and last
+    //   return d.getMonth() == 0 || i == 0 || i == orderedColumns.length-1;
+    // }))
+    // .tickFormat(function(d){
+    //   // abbreviated year for most, full month/year for the ends
+    //   if ( d.getMonth() == 0 ) return "'" + d.getFullYear().toString().substr(2);
+    //   return months[d.getMonth()] + " " + d.getFullYear();
+    // })
+    // .tickSize(10)
 
   d3.select("#axis").remove();
 
@@ -258,7 +258,7 @@ function createSlider(){
     .attr("height",25)
     .append("g")
       .attr("transform","translate(" + (sliderMargin+1) + ",0)")
-      .call(sliderAxis);
+      // .call(sliderAxis);
 
   d3.select("#axis > g g:first-child text").attr("text-anchor","end").style("text-anchor","end");
   d3.select("#axis > g g:last-of-type text").attr("text-anchor","start").style("text-anchor","start");
@@ -273,7 +273,7 @@ function createLegend(){
   legend.append("text").text("City Flu Trend").attr("x",15).attr("y",13);
   // legend.append("text").text("jobs lost").attr("x",15).attr("y",33);
 
-  var sizes = [ 10000, 100000, 250000 ];
+  var sizes = [ 10000, 100000  ]; //pulled out the 250000
   for ( var i in sizes ){
     legend.append("circle")
       .attr( "r", circleSize( sizes[i] ) )
@@ -302,11 +302,11 @@ function setProbeContent(d){
 
 function sliderProbe(){
   var d = dateScale.invert( ( d3.mouse(this)[0] ) );
-  d3.select("#slider-probe")
-    .style( "left", d3.mouse(this)[0] + sliderMargin + "px" )
-    .style("display","block")
-    .select("p")
-    .html( months[d.getMonth()] + " " + d.getFullYear() )
+  // d3.select("#slider-probe")
+  //   .style( "left", d3.mouse(this)[0] + sliderMargin + "px" )
+  //   .style("display","block")
+  //   .select("p")
+  //   .html( months[d.getMonth()] + " " + d.getFullYear() )
 }
 
 function resize(){
