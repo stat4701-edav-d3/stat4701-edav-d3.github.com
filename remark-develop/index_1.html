@@ -23,6 +23,7 @@ class: center, middle
 
 
 
+
 # Stephen and Danny's D3 Mapping Presentation:
 ![googlemap](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)   
 # A Crash Course from Shapefile to TopoJSON (and some GeoJSON) using GDAL/OGR
@@ -36,7 +37,11 @@ class: center, middle
 3. Conversion
 4. Plotting the JSON in D3
 5. TopoJSON vs. GeoJSON
-6. Example: Flu Data
+7. Example: Choropleth
+8. Example: TNoda Zoom in (show zoom code)
+9. Example: Show city level map with graduated points for Google Flu Trends
+
+
 ---
 
 # 1. Introduction
@@ -79,18 +84,13 @@ More simply:
     
 [So here's this TopoJSON file in a simple plot](http://stat4701-edav-d3.github.io/viz/plot_json.html)  
 
-
----
-
 # 4. Plotting the JSON in D3
 [The Map](http://stat4701-edav-d3.github.io/viz/plot_json_1.html)
-
 [Here’s the HTML code - randomly projected](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_1.html)
 
 ###Reconfiguring the Map Extents
 
 [The Map with new Extents](http://stat4701-edav-d3.github.io/viz/plot_json_2.html)
-
 [Here’s the HTML code - Project ](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_2.html)
 
 
@@ -117,16 +117,12 @@ More simply:
 ![cities](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/seeing-latlngs-in-source-from-google-trends.png)
 ![citiesxcode](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/seeing-latlngs-in-xcode.png)
 
-[GDAL/OGR](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb#GDAL/OGR)
+
 
 ---
 
 
-    </textarea>
-    <script src="http://gnab.github.io/remark/downloads/remark-0.5.9.min.js" type="text/javascript">
-    </script>
-    <script type="text/javascript">
-      var slideshow = remark.create();
-    </script>
-  </body>
-</html>
+
+[GDAL/OGR](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb#GDAL/OGR)
+
+
