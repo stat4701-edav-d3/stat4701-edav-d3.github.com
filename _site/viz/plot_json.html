@@ -28,5 +28,4 @@ d3.json("sm.json", function(error, sm) {
       .datum(topojson.feature(sm, sm.objects.states))
       .attr("d", d3.geo.path().projection(d3.geo.mercator()));
 });
-
 </script>
