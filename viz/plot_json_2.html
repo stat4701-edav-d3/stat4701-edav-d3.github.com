@@ -14,6 +14,12 @@ var projection = d3.geo.mercator()
     .scale(1)
     .translate([width, height]);
 
+var projection = d3.geo.albers()
+    .center([39.810556, -98.556111])
+    //.parallels([50, 60])//39.810556, -98.556111
+    //.scale(10000)
+    .translate([width/ 2, height/ 2]);
+
 var path = d3.geo.path()
     .projection(projection);
 
@@ -26,6 +32,6 @@ d3.json("sm.json", function(error, sm) {
 
   svg.append("path")
       .datum(topojson.feature(sm, sm.objects.states))
-      .attr("d", d3.geo.path().projection(d3.geo.mercator()));
+      .attr("d", d3.geo.path().projection(d3.geo.albers()));
 });
 </script>
