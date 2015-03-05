@@ -121,54 +121,134 @@ background-image: url(https://raw.githubusercontent.com/stat4701-edav-d3/stat470
 ]
 
 .right-column[
-Texty text text placeholder text
+
+* ##About Us
+  * Steve
+  * Danny
+
+* ##Familiarity with JavaScript and D3? 
+  * 0
+
+* ##Why we picked this topic? 
+  * Get more familiar with JavaScript and D3
+
 
     some code
 
 
 ]
 
+
 ---
 
-.left-column[
-  # Getting a Shapefile
-]
-.right-column[
-  ## Downloading the Shapefile
 
+  # Getting a Shapefile
+
+  ## Downloading the Shapefile
+  ####[From the United States Census Bureau](https://www.census.gov/geo/maps-data/data/tiger-line.html)
   ```js
   import urllib
 
-  zipLoc = "/data/census/states/cb_2013_us_state_20m.zip"
-  urllib.urlretrieve ("http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip", zipLoc)
+  zipLoc = "/data/cb_2013_us_state_20m.zip"
+  fileURL = "http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip"
+  urllib.urlretrieve (fileURL, zipLoc) #get that file
 
   import zipfile  
   
   zip = zipfile.ZipFile(zipLoc)  
-  zip.extractall("/data/census/states/") 
+  zip.extractall("/data/census/states/") #unzip!
 
 ```
-]
+
+---
+
+  # The Shapefile 
+  #### What's with all these files? 
+
+* .shp—The main file that stores the feature geometry; required.
+
+* .shx—The index file that stores the index of the feature geometry; required.
+
+* .dbf—The dBASE table that stores the attribute information of features; required. There is a one-to-one relationship between geometry and attributes, which is based on record number. Attribute records in the dBASE file must be in the same order as records in the main file.
+
+* .sbn and .sbx—The files that store the spatial index of the features.
+
+* .prj—The file that stores the coordinate system information; used by ArcGIS.
+
+* .xml—Metadata for ArcGIS—stores information about the shapefile.
+
+
+
+---
+  # The Shapefile 
+  #### What's with all these files? 
+optional files:
+
+* .fbn and .fbx—The files that store the spatial index of the features for shapefiles that are read-only.
+
+* .ain and .aih—The files that store the attribute index of the active fields in a table or a theme's attribute table.
+
+* .atx—An .atx file is created for each shapefile or dBASE attribute index created in ArcCatalog. ArcView GIS 3.x attribute indexes for shapefiles and dBASE files are not used by ArcGIS. A new attribute indexing model has been developed for shapefiles and dBASE files.
+
+* .ixs—Geocoding index for read/write shapefiles.
+
+* .cpg—An optional file that can be used to specify the codepage for identifying 
+
+* .mxs—Geocoding index for read/write shapefiles (ODB format).
+
+---
+
+
+#[IPython Notebook: The Setup and Download and Unzip a Shapefile](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/00-d3-presentation.ipynb#The-Setup)
+
+
 ---
 
 .left-column[
   #Conversion
 ]
+
 .right-column[
   ##GDAL/OGR
 
   Using [GDAL/OGR](http://www.gdal.org/) convert the Shapefile to JSON. 
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
-
-  Then, after installing node.js, we can create TopoJson
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+  Then, after installing [node.js](http://nodejs.org/download/), we can create TopoJson
     
     topojson states.topo.json states.json
+]
+---
 
-  More simply:
-    topojson states_cln.topo.json states.json
-    
-  [So here's this TopoJSON file in a simple plot](http://stat4701-edav-d3.github.io/viz/plot_json2.html)  
+#Another Option, as you may want to modify and tweak the Simplification of the TopoJson file, is MapShaper.
+
+
+* ##[MapShaper](http://www.mapshaper.org/)
+
+* ##Demo MapShaper with Census Shapefile on Desktop
+
+---
+
+.left-column[
+  #Plotting in D3
+]
+.right-column[
+</br>
+
+  ###[The TopoJSON file in a simple plot](http://stat4701-edav-d3.github.io/viz/plot_json_1.html)
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+ [![plot json](https://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/img/plot_json.png)](http://stat4701-edav-d3.github.io/viz/plot_json_1.html)    
 ]
 ---
 
