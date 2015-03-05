@@ -163,17 +163,16 @@ layout: false
 
 #Download Shapefile 
 
-```js
 import urllib
 
-zipLoc = "/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/cb_2013_us_state_20m.zip"
-urllib.urlretrieve ("http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip", zipLoc)
+  zipLoc = "/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/cb_2013_us_state_20m.zip"
+  urllib.urlretrieve ("http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip", zipLoc)
 
 import zipfile  
   
-zip = zipfile.ZipFile(zipLoc)  
-zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/") 
-```
+  zip = zipfile.ZipFile(zipLoc)  
+  zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/") 
+
 
 <h2><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb" target='_blank'>IPython Notebook - Get the Data</a></h2>
 
@@ -187,8 +186,6 @@ zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/
 ##GDAL/OGR
 
 Using [GDAL/OGR](http://www.gdal.org/) convert the Shapefile to JSON:
-
-
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
 
