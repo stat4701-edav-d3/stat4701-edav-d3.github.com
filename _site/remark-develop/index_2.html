@@ -84,6 +84,7 @@
         float: right;
         padding-top: 1em;
       }
+      img[alt=full-col-width] { width: 100%; }
     </style>
   </head>
   <body>
@@ -109,7 +110,8 @@ background-image: url(https://raw.githubusercontent.com/stat4701-edav-d3/stat470
   ## Getting a Shapefile
   ## Conversion
   ## Plotting the JSON in D3
-  ## TopoJSON vs. GeoJSON
+  ## Shapefile vs. GeoJSON vs. TopoJSON 
+  ## Flu Data
   ## Demo: Choropleth
   ## Demo: Interactive Map (Tom Noda)
   ## Demo: Google Flu Data Map
@@ -226,7 +228,24 @@ optional files:
   ##GDAL/OGR
   Now that we have our Shapefile, we need to convert it into JSON in order to use it in web applications. This is a two-step process -- we will convert .shp into GeoJSON and then convert GeoJSON into Topojson using a few nifty tools. 
 
-  ##.shp to GeoJSON
+  * ###GDAL - Geospatial Data Abstraction Library - Raster Data
+  *It is sometimes pronounced "goo-doll" (a bit like goo-gle), while others pronounce it "gee-doll," and others pronounce it "gee-dall."*
+
+  * ###OGR - formerly known as OpenGIS Simple Features Reference Implementation - Vector Data
+  *OGR used to stand for OpenGIS Simple Features Reference Implementation. However, since OGR is not fully compliant with the OpenGIS Simple Feature specification and is not approved as a reference implementation of the spec the name was changed to OGR Simple Features Library. The only meaning of OGR in this name is historical. OGR is also the prefix used everywhere in the source of the library for class names, filenames, etc.*
+
+  **Both of these definitions are from [OSGEO FAQ](https://trac.osgeo.org/gdal/wiki/FAQGeneral)**
+]
+
+---
+
+.left-column[
+  #Conversion
+]
+
+.right-column[
+
+  ##Shapefile to GeoJSON
   For this first step, we're going to use [GDAL/OGR](http://www.gdal.org/). GDAL/OGR can be installed using ```sudo apt-get install gdal-bin``` 
   or, for all you OSX folks, ```brew install gdal```.
 
@@ -235,24 +254,26 @@ optional files:
   Next, using the ```ogr2ogr``` commands, we can convert the Shapefile to JSON:
 
 </br>
+</br>
+</br>
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
 </br>
 </br>
 </br>
 </br>
-</br>
-</br>
+
 ]
 
 ---
+
+
 .left-column[
   #Conversion
 ]
 .right-column[
-  ##GDAL/OGR
 
-  ### GeoJSON to TopoJSON
+  ##GeoJSON to TopoJSON
 
  For the next step, we need to install topojson. Before doing this though, you need to make sure youhave [node.js](http://nodejs.org/download/) installed.
 </br>
@@ -275,8 +296,7 @@ optional files:
 </br>
 </br>
 </br>
-</br>
-</br>
+
 ###Another Option, as you may want to modify and tweak the Simplification algorithm of the TopoJson file, is...
 #MapShaper
 
@@ -286,6 +306,22 @@ optional files:
 * ##Demo MapShaper with Census Shapefile on Desktop
 
 ---
+
+.left-column[
+  # Shapefile vs. GeoJSON vs. TopoJSON 
+]
+.right-column[
+</br>
+</br>
+</br>
+</br>
+
+#Comparing file sizes of the same features represented in a Shapefile, GeoJSON and a TopoJSON file. 
+![full-col-width](http://commondatastorage.googleapis.com/imgserv%2Ffilesize.png)
+]
+
+---
+
 
 .left-column[
   #Plotting in D3
@@ -329,39 +365,31 @@ However, that is hardly a presentable map...
   #Reconfiguring the Map Extents
 
   [The Map with new Extents](http://stat4701-edav-d3.github.io/viz/plot_json_2.html)
-  
-  [Here’s the HTML code - Project ](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_2.html)
 
-  [Geoprocessing](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/02-shape-joins-and-convert-to-json.ipynb)
+
+
+  ![full-col-width](http://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/img/json_albers.png)
+
+  [Here’s the HTML code - Project to albers](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_2.html)
 ]
 
 ---
 
-.left-column[
-  # TopoJSON vs. GeoJSON
-]
-.right-column[
-![Size compression for country data](http://commondatastorage.googleapis.com/imgserv%2Ffilesize.png)
-]
-
----
-
-.left-column[
-  # Demo: Choropleth
-]
-
-[Link to Choropleth](http://stat4701-edav-d3.github.io/viz/choropleth/choropleth.html)
+#What to map? 
 
 
+####We wanted to map some data that seemed interesting. 
 
----
+#We had a few ideas to map **Flu** data
 
-.left-column[
-  # Demo: Interactive Map (Tom Noda)
-]
+* ##Sources of Flu Data
+  * ###CDC Flu Data
+    * [Link to R code to scrape CDC Flu Data]()
 
-[Check It!](http://stat4701-edav-d3.github.io/tnoda/index.html)
+  * ###Google Flu Trends
+    * [IPython Notebook of Google Flu Trends Data](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/00-d3-presentation.ipynb#The-Google-Flu-Data)
 
+  * ###Why?...
 
 ---
 
@@ -379,7 +407,31 @@ However, that is hardly a presentable map...
 
   
 ]
+
+
 ---
+.left-column[
+  # Demo: Choropleth
+]
+.right-column[
+</br>
+</br>
+</br>
+</br>
+
+#[Link to Choropleth of Flu Data by State](http://stat4701-edav-d3.github.io/viz/choropleth/choropleth.html)
+</br>
+
+#[The Choropleth of Flu Data by State HTML code](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/choropleth/choropleth.html)
+
+###[The Flu data split by week and normalized by State population (rate per 10,000) - assigned to county, not distrubuted, for joining purposes to the json file we had.](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/tree/master/viz/choropleth/data)
+This example was heavily inspired by [Mike Bostock's Let's Make a Map](http://bost.ocks.org/mike/map/).
+
+]
+
+
+---
+
 
 .left-column[
   # Demo: Google Flu Data Map
@@ -387,40 +439,21 @@ However, that is hardly a presentable map...
 
 .right-column[
 
-
-  The vaccine for the 2014-2015 flu season has only been [18% effective](http://www.nlm.nih.gov/medlineplus/news/fullstory_151174.html) against the dominant strain (H3N2) of the flu. 
-  There have already been some great visualizations of flu data including the Washington Post's weekly [flu tracker](http://www.washingtonpost.com/graphics/health/flu-tracker/).
-
-  We decided to try and use a similar concept and visualize monthly changes over time:
-
-
-  ## Finding the Data:
-
-  ### [CDC Flu Activity and Surveillance](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
-
-  ### [Google Flu Trends](https://www.google.org/flutrends/us/#US)
-
-]
----
-
-.left-column[
-  # Demo: Google Flu Data Map
-]
-
-.right-column[
-
-
-  The vaccine for the 2014-2015 flu season has only been [18% effective](http://www.nlm.nih.gov/medlineplus/news/fullstory_151174.html) against the dominant strain (H3N2) of the flu. 
-  There have already been some great visualizations of flu data including the Washington Post's weekly [flu tracker](http://www.washingtonpost.com/graphics/health/flu-tracker/).
-
-  We decided to try and use a similar concept and visualize monthly changes over time:
-
-
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
   ## Munging the Data:
 
-  ### [In Notebook: EDA](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb)
+  ### [IPython Notebook: Geocoding the Cities with Nominatim](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/02-cities-to-cartodb.ipynb)
+  * [Nominatim Geocoder](http://wiki.openstreetmap.org/wiki/Nominatim)
 
-  ### [Cities Lat/Longs](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/seeing-latlngs-in-source-from-google-trends.png)
+
+  ### [IPython Notebook: Munging and combining weeks into years](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/04-format-cities-for-map.ipynb)
 
 ]
 ---
@@ -432,24 +465,36 @@ However, that is hardly a presentable map...
 
 .right-column[
 
+</br>
+</br>
+</br>
+</br>
+</br>
+ 
+  ## Visualizing Cities Flu Data
 
-  The vaccine for the 2014-2015 flu season has only been [18% effective](http://www.nlm.nih.gov/medlineplus/news/fullstory_151174.html) against the dominant strain (H3N2) of the flu. 
-  There have already been some great visualizations of flu data including the Washington Post's weekly [flu tracker](http://www.washingtonpost.com/graphics/health/flu-tracker/).
+  ### [Visualizing the Flu: Google Flu Trends in D3.js (September 2003 - March 2015)](http://stat4701-edav-d3.github.io/viz/cities/cities.html)
+* Inspired and hacked from [@AxisMaps](https://twitter.com/axismaps) [Geography of Jobs](http://tipstrategies.com/geography-of-jobs/).
 
-  We decided to try and use a similar concept and visualize monthly changes over time:
-
-  ## Visualizing the Data
-
-  ### [Check It OUt:](http://stat4701-edav-d3.github.io/viz/cities/cities.html)
 ]
 ---
 
 
-[GDAL/OGR](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb#GDAL/OGR)
+.left-column[
+  # Demo: Interactive Map
+]
 
+</br>
+</br>
+</br>
+</br>
+</br>
+# Interactive Map with d3.js
 
+One of [Tom Noda's Maps](http://www.tnoda.com/blog/2013-12-07) heavily inspired a lot what we **tried** to do. But couldn't quite get. So we thought we'd share it with you. We even had trouble just getting this to run locally and on our site. 
 
----
+[Interactive Map with d3.js](http://stat4701-edav-d3.github.io/tnoda/index.html)
+
 
 
     </textarea>
