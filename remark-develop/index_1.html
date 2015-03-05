@@ -170,11 +170,17 @@ layout: false
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
 
+---
+.left-column[
+  #Conversion
+]
+.right-column[
+  ##GDAL/OGR
 
   ### GeoJSON to TopoJSON
 
- For the next step, we need to topojson. Before doing this though, you need to have [node.js](http://nodejs.org/download/) installed.
- Using the command ```sudo npm install -g topojson```  or ```npm install -g topojson``` (OSX) will install topojson. We can then create our TopoJson:
+ For the next step, we need to install topojson. Before doing this though, you need to make sure youhave [node.js](http://nodejs.org/download/) installed.
+ Using the command ```sudo npm install -g topojson```  or ```npm install -g topojson``` (OSX) will then install topojson. We can then create our TopoJson:
 
     
     topojson states.topo.json states.json
