@@ -121,10 +121,11 @@ layout: false
 ]
 
 .right-column[
+Texty text text placeholder text
 
     some code
 
-![googlemap](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)
+
 ]
 
 ---
@@ -138,19 +139,19 @@ layout: false
   ```js
   import urllib
 
-  zipLoc = "/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/cb_2013_us_state_20m.zip"
+  zipLoc = "/data/census/states/cb_2013_us_state_20m.zip"
   urllib.urlretrieve ("http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip", zipLoc)
 
   import zipfile  
   
   zip = zipfile.ZipFile(zipLoc)  
-  zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/") 
+  zip.extractall("/data/census/states/") 
 
 ```
 ]
 ---
 
-,left-column[
+.left-column[
   #Conversion
 ]
 .right-column[
