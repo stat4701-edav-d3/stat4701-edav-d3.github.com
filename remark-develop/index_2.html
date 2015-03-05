@@ -123,11 +123,12 @@ background-image: url(https://raw.githubusercontent.com/stat4701-edav-d3/stat470
 .right-column[
 
 * ##About Us
-  * ####Steve
+  * ####Stephen
   * ####Danny
 
 * ##Familiarity with JavaScript and D3? 
-  * ####0
+
+</br>
 
 * ##Why we picked this topic? 
   * ####Get more familiar with JavaScript and D3
@@ -203,7 +204,15 @@ optional files:
 
 ---
 
-
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 #[IPython Notebook: The Setup and Download and Unzip a Shapefile](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/00-d3-presentation.ipynb#The-Setup)
 
 
@@ -215,8 +224,17 @@ optional files:
 
 .right-column[
   ##GDAL/OGR
+  Now that we have our Shapefile, we need to convert it into JSON in order to use it in web applications. This is a two-step process -- we will convert .shp into GeoJSON and then convert GeoJSON into Topojson using a few nifty tools. 
 
-  Using [GDAL/OGR](http://www.gdal.org/) convert the Shapefile to JSON. 
+  ##.shp to GeoJSON
+  For this first step, we're going to use [GDAL/OGR](http://www.gdal.org/). GDAL/OGR can be installed using ```sudo apt-get install gdal-bin``` 
+  or, for all you OSX folks, ```brew install gdal```.
+
+  </br>
+
+  Next, using the ```ogr2ogr``` commands, we can convert the Shapefile to JSON:
+
+</br>
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
 </br>
@@ -225,13 +243,42 @@ optional files:
 </br>
 </br>
 </br>
-  Then, after installing [node.js](http://nodejs.org/download/), we can create TopoJson
+]
+
+---
+.left-column[
+  #Conversion
+]
+.right-column[
+  ##GDAL/OGR
+
+  ### GeoJSON to TopoJSON
+
+ For the next step, we need to install topojson. Before doing this though, you need to make sure youhave [node.js](http://nodejs.org/download/) installed.
+</br>
+</br>
+</br>
+</br>
+
+ Using the command ```sudo npm install -g topojson```  or ```npm install -g topojson``` (OSX) will then install topojson. We can then create our TopoJson:
+</br>
+</br>
+</br>
+</br>
+
     
     topojson states.topo.json states.json
 ]
----
 
-#Another Option, as you may want to modify and tweak the Simplification of the TopoJson file, is MapShaper.
+---
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+###Another Option, as you may want to modify and tweak the Simplification algorithm of the TopoJson file, is...
+#MapShaper
 
 
 * ##[MapShaper](http://www.mapshaper.org/)
@@ -255,23 +302,34 @@ optional files:
 </br>
  [![plot json](https://raw.githubusercontent.com/stat4701-edav-d3/d3-presentation/master/img/plot_json.png)](http://stat4701-edav-d3.github.io/viz/plot_json_1.html)  
 
-###[Here’s the HTML code - randomly projected](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_1.html)
+###[Here’s the HTML code](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_1.html)
 
 
 ]
 ---
 
+</br>
+</br>
+</br>
+</br>
+##That's enough to make you want to install a local instance of cold beer.
+
+![cold beer](https://camo.githubusercontent.com/9dd59c598e38baf943174ad4cb2d334401ba8a34/687474703a2f2f746865736f636965747970616765732e6f72672f736f63696d616765732f66696c65732f323031302f30382f70616273742d626c75652d726962626f6e2e6a7067)
+
+However, that is hardly a presentable map...
+
+---
 
 .left-column[
   #Plotting the JSON in D3
 ]
 .right-column[
- 
-  [Here’s the HTML code - randomly projected](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_1.html)
+  
 
-  ###Reconfiguring the Map Extents
+  #Reconfiguring the Map Extents
 
   [The Map with new Extents](http://stat4701-edav-d3.github.io/viz/plot_json_2.html)
+  
   [Here’s the HTML code - Project ](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_2.html)
 
   [Geoprocessing](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/02-shape-joins-and-convert-to-json.ipynb)
