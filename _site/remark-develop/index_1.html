@@ -92,11 +92,10 @@
 class: center, middle
 name: how
 layout: false
-background-image: url(https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)
 
-# Stephen and Danny's D3 Mapping Presentation:
-![googlemap](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)   
-## A <i>Crash Course</i> from Shapefile to TopoJSON (and some GeoJSON) using GDAL/OGR
+# Mapping in D3.js:
+![googlefail](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/googlemap.jpg)
+## A Crash Course from Shapefile to TopoJSON (and some GeoJSON) using GDAL/OGR
 
 ---
 
@@ -108,7 +107,7 @@ background-image: url(https://raw.githubusercontent.com/stat4701-edav-d3/stat470
   ## Introduction
   ## Getting a Shapefile
   ## Conversion
-  ## Plotting the JSON in D3
+  ## Plotting the JSON in D3.js
   ## TopoJSON vs. GeoJSON
   ## Demo: Choropleth
   ## Demo: Interactive Map (Tom Noda)
@@ -121,7 +120,7 @@ background-image: url(https://raw.githubusercontent.com/stat4701-edav-d3/stat470
 ]
 
 .right-column[
-Texty text text placeholder text
+  ## Texty text text placeholder text
 
     some code
 
@@ -157,26 +156,49 @@ Texty text text placeholder text
 .right-column[
   ##GDAL/OGR
 
-  Using [GDAL/OGR](http://www.gdal.org/) convert the Shapefile to JSON. 
+  Now that we have our Shapefile, we need to convert it into JSON in order to use it in web applications. 
+  This is a two-step process -- we will convert .shp into GeoJSON and then convert GeoJSON into Topojson using a few nifty tools. 
+
+
+  ### .shp to GeoJSON
+
+  For this first step, we're going to use [GDAL/OGR](http://www.gdal.org/). GDAL/OGR can be installed using ```sudo apt-get install gdal-bin``` 
+  or, for all you OSX folks, ```brew install gdal```.
+  
+  Next, using the ```ogr2ogr``` commands, we can convert the Shapefile to JSON:
+
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
+]
+---
+.left-column[
+  #Conversion
+]
+.right-column[
+  ##GDAL/OGR
 
-  Then, after installing node.js, we can create TopoJson
+  ### GeoJSON to TopoJSON
+
+ For the next step, we need to install topojson. Before doing this though, you need to make sure youhave [node.js](http://nodejs.org/download/) installed.
+ Using the command ```sudo npm install -g topojson```  or ```npm install -g topojson``` (OSX) will then install topojson. We can then create our TopoJson:
+
     
     topojson states.topo.json states.json
 
   More simply:
+
     topojson states_cln.topo.json states.json
     
-  [So here's this TopoJSON file in a simple plot](http://stat4701-edav-d3.github.io/viz/plot_json2.html)  
+  So here's this TopoJSON file in a [simple plot](http://stat4701-edav-d3.github.io/viz/plot_json1.html)  
 ]
 ---
 
 
 .left-column[
-  #Plotting the JSON in D3
+  #Plotting the JSON in D3.js
 ]
 .right-column[
+  ##The Mapping
   [The Map](http://stat4701-edav-d3.github.io/viz/plot_json_1.html)
   [Here’s the HTML code - randomly projected](https://github.com/stat4701-edav-d3/stat4701-edav-d3.github.com/blob/master/viz/plot_json_1.html)
 
@@ -202,10 +224,11 @@ Texty text text placeholder text
 .left-column[
   # Demo: Choropleth
 ]
+.right-column[
+  ## If we can get this to work:
+  [Link to Choropleth](http://stat4701-edav-d3.github.io/viz/choropleth/choropleth.html)
 
-[Link to Choropleth](http://stat4701-edav-d3.github.io/viz/choropleth/choropleth.html)
-
-
+]
 
 ---
 
@@ -213,7 +236,7 @@ Texty text text placeholder text
   # Demo: Interactive Map (Tom Noda)
 ]
 
-[Check It!](http://stat4701-edav-d3.github.io/tnoda/index.html)
+[Check It Out](http://stat4701-edav-d3.github.io/tnoda/index.html)
 
 
 ---
@@ -293,7 +316,7 @@ Texty text text placeholder text
 
   ## Visualizing the Data
 
-  ### [Check It OUt:](http://stat4701-edav-d3.github.io/viz/cities/cities.html)
+  ### [Check It Out](http://stat4701-edav-d3.github.io/viz/cities/cities.html)
 ]
 ---
 
