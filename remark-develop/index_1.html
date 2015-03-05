@@ -158,9 +158,10 @@ layout: false
 
   Now that we have our shapefile, we need to convert it into JSON in order to use it in web applications. 
   This is a two-step process --we convert .shp into GeoJSON and then convert GeoJSON into Topojson using a few nifty tools. 
-  The first of these tools, [GDAL/OGR](http://www.gdal.org/) can be installed using ```sudo apt-get install gdal-bin``` or ```brew install gdal```
-  for all you OSX folks.
 
+
+  The first of these tools, [GDAL/OGR](http://www.gdal.org/) can be installed using ```sudo apt-get install gdal-bin``` or, for all you OSX folks, ```brew install gdal```.
+  
   Next, using the ```ogr2ogr``` commands, we can convert the Shapefile to JSON:
 
     ogr2ogr -f GeoJSON states.json cb_2013_us_state_20m.shp
@@ -172,7 +173,7 @@ layout: false
   More simply:
     topojson states_cln.topo.json states.json
     
-  [So here's this TopoJSON file in a simple plot](http://stat4701-edav-d3.github.io/viz/plot_json1.html)  
+  So here's this TopoJSON file in a [simple plot](http://stat4701-edav-d3.github.io/viz/plot_json1.html)  
 ]
 ---
 
