@@ -80,18 +80,18 @@ class: center, middle
 name: inverse
 
 .left-column[
-  ### Agenda
+  #Agenda
 ]
 
 .right-column[
-## 1. Introduction
-## 2. Getting a Shapefile
-## 3. Conversion
-## 4. Plotting the JSON in D3
-## 5. TopoJSON vs. GeoJSON
-## 6. Example: Choropleth
-## 7. Example: TNoda Map
-## 8. Example: Google Flu Data Map
+## Introduction
+## Getting a Shapefile
+## Conversion
+## Plotting the JSON in D3
+## TopoJSON vs. GeoJSON
+## Example: Choropleth
+## Example: TNoda Map
+## Example: Google Flu Data Map
 
 .footnote[Project Site](http://stat4701-edav-d3.github.io/)]
 
@@ -99,7 +99,7 @@ name: inverse
 ---
 
 .left-column[
-  ### 1. Introduction
+  # Introduction
 ]
 
 .right-column[
@@ -111,20 +111,23 @@ name: inverse
 
 ---
 
-# 2. Getting a Shapefile
+.left-column[
+  Getting a Shapefile
+]
+.right-column[]
+  - Downloading the Shapefile
 
-- Downloading the Shapefile
+  ```js
+  import urllib
 
-```js
-import urllib
+  zipLoc = "/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/cb_2013_us_state_20m.zip"
+  urllib.urlretrieve ("http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip", zipLoc)
 
-zipLoc = "/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/cb_2013_us_state_20m.zip"
-urllib.urlretrieve ("http://www2.census.gov/geo/tiger/GENZ2013/cb_2013_us_state_20m.zip", zipLoc)
-
-import zipfile  
+  import zipfile  
   
-zip = zipfile.ZipFile(zipLoc)  
-zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/") 
+  zip = zipfile.ZipFile(zipLoc)  
+  zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/") 
+]
 ```
 - Geoprocessing
 
