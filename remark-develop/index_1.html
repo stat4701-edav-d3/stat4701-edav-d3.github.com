@@ -53,7 +53,7 @@ class: center, middle
 
 # 2. Getting a Shapefile
 
-#Download Shapefile 
+- Downloading the Shapefile
 
 ```js
 import urllib
@@ -66,12 +66,10 @@ import zipfile
 zip = zipfile.ZipFile(zipLoc)  
 zip.extractall("/Users/danielmsheehan/GitHub/d3-presentation/data/census/states/") 
 ```
+- Geoprocessing
 
 
-
-<h2><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb target='_blank'">IPython Notebook - Get the Data</a></h2>
-
-<h2><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/02-shape-joins-and-convert-to-json.ipynb" target='_blank'>IPyth`on Notebook - Geoprocessing</a></h2>
+<h2><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/02-shape-joins-and-convert-to-json.ipynb">IPython Notebook - Geoprocessing</a></h2>
 
 
 ---
@@ -133,11 +131,16 @@ More simply:
 
 Motivation: [Vaccine for the 2014-2015 is only 18 percent effective against dominant strain of flu](http://www.nlm.nih.gov/medlineplus/news/fullstory_151174.html)
 
-# Data
+## Data Sources
 
-- ##[CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
+- [CDC](http://www.cdc.gov/flu/weekly/fluactivitysurv.htm)
 
-- ##[Google Flu Trends](https://www.google.org/flutrends/us/#US)
+- [Google Flu Trends](https://www.google.org/flutrends/us/#US)
+
+## Getting the Data
+
+- [In Notebook: EDA](http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb)
+
 
 ###Cities Lat/Longs
 ![cities](https://raw.githubusercontent.com/stat4701-edav-d3/stat4701-edav-d3.github.com/master/remark-develop/img/seeing-latlngs-in-source-from-google-trends.png)
