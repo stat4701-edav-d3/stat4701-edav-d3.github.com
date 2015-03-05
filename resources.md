@@ -4,6 +4,14 @@ title: Resources
 permalink: /resources/
 ---
 
+##IPython Notebooks with steps:
+<ul>
+<li><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/00-d3-presentation.ipynb" target='_blank'>IPython Notebook 00</a></li>
+<li><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb" target='_blank'>IPython Notebook 01</a></li>
+<li><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/01-read-in-source-data-for-all-sources.ipynb" target='_blank'>IPython Notebook 01</a></li>
+<li><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/02-cities-to-cartodb.ipynb" target='_blank'>IPython Notebook 02</a></li>
+<li><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/03-save-html-pages.ipynb" target='_blank'>IPython Notebook 03</a></li>
+<li><a href="http://nbviewer.ipython.org/github/stat4701-edav-d3/d3-presentation/blob/master/04-format-cities-for-map.ipynb" target='_blank'>IPython Notebook 04</a></li></ul>
 
 ##Data
 
